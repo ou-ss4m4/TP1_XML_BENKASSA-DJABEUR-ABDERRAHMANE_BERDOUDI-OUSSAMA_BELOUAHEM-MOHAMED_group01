@@ -1,9 +1,4 @@
-(: ================================================================ :)
-(: FICHIER  : requetes.xq                                        :)
-(: PROJET   : Club InfoTech — Mini-projet XML/XQuery             :)
-(: PARTIE   : 3.3 — Les 5 requêtes XQuery                        :)
-(: USAGE    : Ouvrir dans BaseX, sélectionner un bloc, F5        :)
-(: ================================================================ :)
+
 
 (: ---------------------------------------------------------------- :)
 (: Q1 — Liste complète des membres                                 :)
