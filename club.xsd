@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="FormatIdCat">
+    <xs:restriction base="xs:ID">
+      <xs:pattern value="C\d+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FormatIdMembre">
+    <xs:restriction base="xs:ID">
+      <xs:pattern value="M\d{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FormatIdConcours">
+    <xs:restriction base="xs:ID">
+      <xs:pattern value="CO\d+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PlageComplexite">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PlageTemps">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ValeurCoefficient">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FormatEmail">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[^@\s]+@[^@\s]+\.[^@\s]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ChaineNonVide">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TypeCategorie">
+    <xs:attribute name="id"      type="FormatIdCat"   use="required"/>
+    <xs:attribute name="libelle" type="ChaineNonVide"  use="required"/>
+  </xs:complexType>
+  <xs:complexType name="TypeMembre">
+    <xs:sequence>
+      <xs:element name="nom"    type="ChaineNonVide"/>
+      <xs:element name="prenom" type="ChaineNonVide"/>
+      <xs:element name="email"  type="FormatEmail"/>
+    </xs:sequence>
+    <xs:attribute name="id"           type="FormatIdMembre" use="required"/>
+    <xs:attribute name="categorieRef" type="xs:IDREF"       use="required"/>
+  </xs:complexType>
+  <xs:complexType name="TypeParticipant">
+    <xs:sequence>
+      <xs:element name="complexite"     type="PlageComplexite"/>
+      <xs:element name="tempsExecution" type="PlageTemps"/>
+    </xs:sequence>
+    <xs:attribute name="membreRef" type="xs:IDREF" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="TypeListeParticipants">
+    <xs:sequence>
+      <xs:element name="participant" type="TypeParticipant"
+                  minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TypeUnConcours">
+    <xs:sequence>
+      <xs:element name="titre"        type="ChaineNonVide"/>
+      <xs:element name="participants" type="TypeListeParticipants"/>
+    </xs:sequence>
+    <xs:attribute name="id"           type="FormatIdConcours"  use="required"/>
+    <xs:attribute name="categorieRef" type="xs:IDREF"          use="required"/>
+    <xs:attribute name="date"         type="xs:date"           use="required"/>
+    <xs:attribute name="coefficient"  type="ValeurCoefficient" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="TypeConteneur">
+    <xs:sequence>
+      <xs:element name="concours" type="TypeUnConcours"
+                  minOccurs="3" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TypeCategories">
+    <xs:sequence>
+      <xs:element name="categorie" type="TypeCategorie"
+                  minOccurs="3" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TypeMembres">
+    <xs:sequence>
+      <xs:element name="membre" type="TypeMembre"
+                  minOccurs="8" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TypeClub">
+    <xs:sequence>
+      <xs:element name="categories" type="TypeCategories"/>
+      <xs:element name="membres"    type="TypeMembres"/>
+      <xs:element name="concours"   type="TypeConteneur"/>
+    </xs:sequence>
+    <xs:attribute name="nom" type="ChaineNonVide" use="required"/>
+  </xs:complexType>
+  <xs:element name="club" type="TypeClub"/>
+
+</xs:schema>

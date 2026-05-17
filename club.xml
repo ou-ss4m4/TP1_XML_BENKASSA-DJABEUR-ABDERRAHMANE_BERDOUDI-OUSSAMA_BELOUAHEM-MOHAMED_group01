@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<club xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nom="Info_Tech" xsi:noNamespaceSchemaLocation="club.xsd">
+  <categories>
+    <categorie id="C1" libelle="Cybersécurité"/>
+    <categorie id="C2" libelle="Intelligence Artificielle"/>
+    <categorie id="C3" libelle="Développement Mobile"/>
+  </categories>
+  <membres>
+    <membre id="M001" categorieRef="C1">
+      <nom>Larbi</nom>
+      <prenom>Nassim</prenom>
+      <email>n.larbi@infotech.dz</email>
+    </membre>
+    <membre id="M002" categorieRef="C1">
+      <nom>Ferhat</nom>
+      <prenom>Meryem</prenom>
+      <email>m.ferhat@infotech.dz</email>
+    </membre>
+    <membre id="M003" categorieRef="C1">
+      <nom>Saadi</nom>
+      <prenom>Walid</prenom>
+      <email>w.saadi@infotech.dz</email>
+    </membre>
+    <membre id="M004" categorieRef="C2">
+      <nom>Guendouz</nom>
+      <prenom>Asma</prenom>
+      <email>a.guendouz@infotech.dz</email>
+    </membre>
+    <membre id="M005" categorieRef="C2">
+      <nom>Tahir</nom>
+      <prenom>Ryad</prenom>
+      <email>r.tahir@infotech.dz</email>
+    </membre>
+    <membre id="M006" categorieRef="C2">
+      <nom>Benmessaoud</nom>
+      <prenom>Hana</prenom>
+      <email>h.benmessaoud@infotech.dz</email>
+    </membre>
+    <membre id="M007" categorieRef="C3">
+      <nom>Rahmani</nom>
+      <prenom>Ines</prenom>
+      <email>i.rahmani@infotech.dz</email>
+    </membre>
+    <membre id="M008" categorieRef="C3">
+      <nom>Chebli</nom>
+      <prenom>Tarek</prenom>
+      <email>t.chebli@infotech.dz</email>
+    </membre>
+    <membre id="M009" categorieRef="C3">
+      <nom>Ziane</nom>
+      <prenom>Dounia</prenom>
+      <email>d.ziane@infotech.dz</email>
+    </membre>
+    <membre id="M010" categorieRef="C3">
+      <nom>Mekki</nom>
+      <prenom>Adel</prenom>
+      <email>a.mekki@infotech.dz</email>
+    </membre>
+  <membre id="M011" categorieRef="C1"><nom>bengit</nom><prenom>kamal</prenom><email>K.bengit@gmail.com</email></membre></membres>
+  <concours>
+    <concours id="CO1" categorieRef="C1" date="2025-02-10" coefficient="1.8">
+      <titre>Défi Pentest — Hiver 2025</titre>
+      <participants>
+        <participant membreRef="M001">
+          <complexite>72</complexite>
+          <tempsExecution>105</tempsExecution>
+        </participant>
+        <participant membreRef="M002">
+          <complexite>88</complexite>
+          <tempsExecution>90</tempsExecution>
+        </participant>
+        <participant membreRef="M003">
+          <complexite>65</complexite>
+          <tempsExecution>130</tempsExecution>
+        </participant>
+      </participants>
+    </concours>
+    <concours id="CO2" categorieRef="C2" date="2025-04-03" coefficient="2.0">
+      <titre>Battle ML — Printemps 2025</titre>
+      <participants>
+        <participant membreRef="M004">
+          <complexite>91</complexite>
+          <tempsExecution>75</tempsExecution>
+        </participant>
+        <participant membreRef="M005">
+          <complexite>84</complexite>
+          <tempsExecution>110</tempsExecution>
+        </participant>
+        <participant membreRef="M006">
+          <complexite>79</complexite>
+          <tempsExecution>95</tempsExecution>
+        </participant>
+      </participants>
+    </concours>
+    <concours id="CO3" categorieRef="C3" date="2025-05-22" coefficient="1.5">
+      <titre>AppChallenge Android — Mai 2025</titre>
+      <participants>
+        <participant membreRef="M007">
+          <complexite>83</complexite>
+          <tempsExecution>145</tempsExecution>
+        </participant>
+        <participant membreRef="M008">
+          <complexite>76</complexite>
+          <tempsExecution>160</tempsExecution>
+        </participant>
+        <participant membreRef="M009">
+          <complexite>95</complexite>
+          <tempsExecution>60</tempsExecution>
+        </participant>
+        <participant membreRef="M010">
+          <complexite>88</complexite>
+          <tempsExecution>120</tempsExecution>
+        </participant>
+      </participants>
+    </concours>
+
+  </concours>
+
+</club>
